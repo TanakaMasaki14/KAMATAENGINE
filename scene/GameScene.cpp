@@ -18,6 +18,9 @@ void GameScene::Initialize() {
 	textureHandle_ = TextureManager::Load("mario.jpg");
 	model_ = Model::Create();
 	delete model_;
+	worldTransform_.scale_ = { 5.0f, 5.0f, 5.0f };
+	worldTransform_.rotation_ = { XM_PI / 4.0f, XM_PI / 4.0f, 0.0f };
+	worldTransform_.translation_ = { 10.0f, 10.0f, 10.0f };
 	worldTransform_.Initialize();
 	viewProjection_.Initialize();
 	audio_->PlayWave(soundDataHandle_);
