@@ -56,6 +56,10 @@ public:
 	// セッター
 	void SetPlayer(Player* player) { player_ = player; }
 
+	void OnCollision();
+	//弾リストを取得
+	const std::list<std::unique_ptr<EnemyBullet>>& GetBullets() { return bullets_; }
+
 	// ワールド座標を取得
 	Vector3 GetWorldPosition();
 private:

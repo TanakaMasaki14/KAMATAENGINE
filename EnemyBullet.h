@@ -11,6 +11,8 @@ class EnemyBullet {
 
 public:
 
+	void OnCollision();
+
 	/// <summary>
 	/// コンストクラタ
 	/// </summary>

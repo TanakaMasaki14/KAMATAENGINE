@@ -20,7 +20,6 @@
 class Player
 {
 public:
-
 	/// <summary>
 	/// コンストクラタ
 	/// </summary>
@@ -42,6 +41,10 @@ public:
 	void TransferMatrix();
 
 	void Attack();
+
+	void OnCollision();
+	//弾リストを取得
+	const std::list<std::unique_ptr<PlayerBullet>>& GetBullets() { return bullets_; }
 
 	//ワールド座標を取得
 	Vector3 GetWorldPosition();

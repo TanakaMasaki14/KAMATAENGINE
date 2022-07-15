@@ -46,7 +46,7 @@ public: // ƒƒ“ƒoŠÖ”
 	/// </summary>
 	void Draw();
 
-
+	void CheckAllCollisions();
 
 private: // ƒƒ“ƒo•Ï”
 	DirectXCommon* dxCommon_ = nullptr;

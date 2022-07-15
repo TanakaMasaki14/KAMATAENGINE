@@ -12,6 +12,8 @@ class PlayerBullet
 
 public:
 
+	void OnCollision();
+
 	/// <summary>
 	/// コンストクラタ
 	/// </summary>
