@@ -1,7 +1,6 @@
 #include "EnemyBullet.h"
 #include "Enemy.h"
 
-
 EnemyBullet::EnemyBullet()
 {
 }
@@ -94,7 +93,6 @@ void EnemyBullet::Update() {
 	TransferMatrix();
 	worldTransform_.TransferMatrix();
 }
-
 
 void EnemyBullet::Draw(const ViewProjection& viewProjection)
 {

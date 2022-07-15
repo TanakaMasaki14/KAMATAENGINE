@@ -14,7 +14,6 @@ Vector3 vecM(Vector3& vec, Matrix4& mat) {
 	return vec;
 }
 
-
 Enemy::Enemy() {
 
 }

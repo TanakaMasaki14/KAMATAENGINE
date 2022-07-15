@@ -58,8 +58,6 @@ void GameScene::Initialize() {
 	AxisIndicator::SetTargetViewProjection(&viewProjection_);
 }
 
-
-
 void GameScene::Update() {
 	debugCamera_->Update();
 

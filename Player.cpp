@@ -177,7 +177,6 @@ void Player::Attack()
 	}
 }
 
-
 void Player::Draw(ViewProjection& viewProjection_)
 {
 #pragma region 背景スプライト描画
