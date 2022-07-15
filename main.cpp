@@ -1,4 +1,4 @@
-ï»¿#include "Audio.h"
+#include "Audio.h"
 #include "DirectXCommon.h"
 #include "GameScene.h"
 #include "TextureManager.h"
@@ -6,12 +6,12 @@
 #include "AxisIndicator.h"
 #include "PrimitiveDrawer.h"
 
-const char TITLE[] = "LE2C_19_ã‚¿ãƒŠã‚«_ãƒã‚µã‚­_AL3";
-// Windowsã‚¢ãƒ—ãƒªã§ã®ã‚¨ãƒ³ãƒˆãƒªãƒ¼ãƒã‚¤ãƒ³ãƒˆ(mainé–¢æ•°)
+
+// WindowsƒAƒvƒŠ‚Å‚ÌƒGƒ“ƒgƒŠ[ƒ|ƒCƒ“ƒg(mainŠÖ”)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	WinApp* win = nullptr;
 	DirectXCommon* dxCommon = nullptr;
-	// æ±ç”¨æ©Ÿèƒ½
+	// ”Ä—p‹@”\
 	Input* input = nullptr;
 	Audio* audio = nullptr;
 	DebugText* debugText = nullptr;
@@ -19,38 +19,38 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	PrimitiveDrawer* primitiveDrawer = nullptr;
 	GameScene* gameScene = nullptr;
 
-	// ã‚²ãƒ¼ãƒ ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä½œæˆ
+	// ƒQ[ƒ€ƒEƒBƒ“ƒhƒE‚Ìì¬
 	win = WinApp::GetInstance();
 	win->CreateGameWindow();
 
-	// DirectXåˆæœŸåŒ–å‡¦ç†
+	// DirectX‰Šú‰»ˆ—
 	dxCommon = DirectXCommon::GetInstance();
 	dxCommon->Initialize(win);
 
-#pragma region æ±ç”¨æ©Ÿèƒ½åˆæœŸåŒ–
-	// å…¥åŠ›ã®åˆæœŸåŒ–
+#pragma region ”Ä—p‹@”\‰Šú‰»
+	// “ü—Í‚Ì‰Šú‰»
 	input = Input::GetInstance();
 	input->Initialize();
 
-	// ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªã®åˆæœŸåŒ–
+	// ƒI[ƒfƒBƒI‚Ì‰Šú‰»
 	audio = Audio::GetInstance();
 	audio->Initialize();
 
-	// ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒãƒãƒ¼ã‚¸ãƒ£ã®åˆæœŸåŒ–
+	// ƒeƒNƒXƒ`ƒƒƒ}ƒl[ƒWƒƒ‚Ì‰Šú‰»
 	TextureManager::GetInstance()->Initialize(dxCommon->GetDevice());
 	TextureManager::Load("white1x1.png");
 
-	// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆé™çš„åˆæœŸåŒ–
+	// ƒXƒvƒ‰ƒCƒgÃ“I‰Šú‰»
 	Sprite::StaticInitialize(dxCommon->GetDevice(), WinApp::kWindowWidth, WinApp::kWindowHeight);
 
-	// ãƒ‡ãƒãƒƒã‚°ãƒ†ã‚­ã‚¹ãƒˆåˆæœŸåŒ–
+	// ƒfƒoƒbƒOƒeƒLƒXƒg‰Šú‰»
 	debugText = DebugText::GetInstance();
 	debugText->Initialize();
 
-	// 3Dãƒ¢ãƒ‡ãƒ«é™çš„åˆæœŸåŒ–
+	// 3Dƒ‚ƒfƒ‹Ã“I‰Šú‰»
 	Model::StaticInitialize();
 
-	// è»¸æ–¹å‘è¡¨ç¤ºåˆæœŸåŒ–
+	// ²•ûŒü•\¦‰Šú‰»
 	axisIndicator = AxisIndicator::GetInstance();
 	axisIndicator->Initialize();
 
@@ -58,41 +58,41 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	primitiveDrawer->Initialize();
 #pragma endregion
 
-	// ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã®åˆæœŸåŒ–
+	// ƒQ[ƒ€ƒV[ƒ“‚Ì‰Šú‰»
 	gameScene = new GameScene();
 	gameScene->Initialize();
 
-	// ãƒ¡ã‚¤ãƒ³ãƒ«ãƒ¼ãƒ—
+	// ƒƒCƒ“ƒ‹[ƒv
 	while (true) {
-		// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡¦ç†
+		// ƒƒbƒZ[ƒWˆ—
 		if (win->ProcessMessage()) {
 			break;
 		}
 
-		// å…¥åŠ›é–¢é€£ã®æ¯ãƒ•ãƒ¬ãƒ¼ãƒ å‡¦ç†
+		// “ü—ÍŠÖ˜A‚Ì–ˆƒtƒŒ[ƒ€ˆ—
 		input->Update();
-		// ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã®æ¯ãƒ•ãƒ¬ãƒ¼ãƒ å‡¦ç†
+		// ƒQ[ƒ€ƒV[ƒ“‚Ì–ˆƒtƒŒ[ƒ€ˆ—
 		gameScene->Update();
-		// è»¸è¡¨ç¤ºã®æ›´æ–°
+		// ²•\¦‚ÌXV
 		axisIndicator->Update();
 
-		// æç”»é–‹å§‹
+		// •`‰æŠJn
 		dxCommon->PreDraw();
-		// ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã®æç”»
+		// ƒQ[ƒ€ƒV[ƒ“‚Ì•`‰æ
 		gameScene->Draw();
-		// è»¸è¡¨ç¤ºã®æç”»
+		// ²•\¦‚Ì•`‰æ
 		axisIndicator->Draw();
-		// ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–æç”»ã®ãƒªã‚»ãƒƒãƒˆ
+		// ƒvƒŠƒ~ƒeƒBƒu•`‰æ‚ÌƒŠƒZƒbƒg
 		primitiveDrawer->Reset();
-		// æç”»çµ‚äº†
+		// •`‰æI—¹
 		dxCommon->PostDraw();
 	}
 
-	// å„ç¨®è§£æ”¾
+	// Šeí‰ğ•ú
 	SafeDelete(gameScene);
 	audio->Finalize();
 
-	// ã‚²ãƒ¼ãƒ ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ç ´æ£„
+	// ƒQ[ƒ€ƒEƒBƒ“ƒhƒE‚Ì”jŠü
 	win->TerminateGameWindow();
 
 	return 0;
