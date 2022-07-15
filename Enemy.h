@@ -1,4 +1,5 @@
 #pragma once
+
 #include <cassert>
 #include "Audio.h"
 #include "DirectXCommon.h"

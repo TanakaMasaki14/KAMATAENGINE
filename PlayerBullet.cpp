@@ -1,7 +1,6 @@
 #include "PlayerBullet.h"
 #include "Player.h"
 
-
 PlayerBullet::PlayerBullet()
 {
 }
